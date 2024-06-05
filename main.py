@@ -10,10 +10,11 @@ class Task():
         self.dead_line = dead_line
         self.state = state
 
-    def add_task(self, description):
-        pass
+    def add_task(self):
+        task = input("введите задачу")
 
-    def done_mark(self, ):
+
+    def done_mark(self):
         pass
 
     def do_list(self):
