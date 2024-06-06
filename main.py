@@ -1,21 +1,42 @@
-#Менеджер задач
-#Задача: Создай класс Task, который позволяет управлять задачами (делами).
+# Менеджер задач
+# Задача: Создай класс Task, который позволяет управлять задачами (делами).
 # У задачи должны быть атрибуты: описание задачи, срок выполнения и статус (выполнено/не выполнено).
 # Реализуй функцию для добавления задач, отметки выполненных задач и вывода списка текущих (не выполненных) задач.
 
 
-class Task():
-    def __int__(self, description, dead_line, state):
+class Task:
+    def __init__(self, description, dead_line, accomp):
         self.description = description
         self.dead_line = dead_line
-        self.state = state
+        self.accomp = accomp
 
     def add_task(self):
-        task = input("введите задачу")
-
+        self.description = input("введите задачу")
+        self.dead_line = input("введите срок выполнения")
+        self.accomp = False
 
     def done_mark(self):
-        pass
+        self.accomp = True
 
-    def do_list(self):
-        print()
+tasks = []
+
+while True:
+    print("введите 0 для добавления задачи")
+    print("введите 1 для отметки о выполнении")
+    print("введите 2 для просмотра задачь")
+    print("нажмите любую другую кнопку для выхода")
+    comand = input()
+    if comand == "0":
+        a = Task(True, True, True)
+        a.add_task()
+        tasks.append(a)
+
+
+    elif comand == "1":
+        pass
+    elif comand == "2":
+        print(tasks)
+    else: break
+
+
+
