@@ -21,38 +21,36 @@ class Task:
 tasks = []
 
 while True:
-    print("текущие задачи:")
+    print("\nтекущие задачи:")
     if tasks:
-        s = 1
+        #s = 1
         for i in tasks:
             if i.accomp != True:
-                print("задача №", s, ":  ", i.description, "\t", end="")
+                print("задача №", tasks.index(i)+1, ":  ", i.description, "\t", end="")
                 print("закончить до:  ", i.dead_line)
-                s += 1
+                #s += 1
     else: print("нет задач")
 
 
 
-    print("\nвведите 0 для добавления задачи ")
-    print("введите 1 для отметки о выполнении ")
-    print("введите 2 для просмотра актуальных задач ")
+    print("\nвведите \"д\" для добавления задачи ")
+    print("или введите номер выполненой задачи ")
+
     print("нажмите любую другую кнопку для выхода ")
     comand = input()
-    if comand == "0":
+    if comand == "д":
         a = Task(True, True, True)
         a.add_task()
         tasks.append(a)
 
 
-    elif comand == "1":
-        pass
-    elif comand == "2":
-        s = 1
-        for i in tasks:
-            if i.accomp != True:
-                print("задача №", s, ":  ", i.description, "\t", end="")
-                print("закончить до:  ", i.dead_line)
-                s += 1
+    elif comand in ["1", "2", "3", "4", "5", "6", "7", "8", "9"]:
+        comand = int(comand)-1
+        f = tasks[comand]
+        f.done_mark()
+
+
+
 
 
 
