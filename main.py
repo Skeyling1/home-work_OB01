@@ -33,12 +33,12 @@ while True:
 
 
 
-    print("\nвведите \"д\" для добавления задачи ")
+    print("\nвведите \"+\" для добавления задачи ")
     print("или введите номер выполненой задачи ")
 
     print("нажмите любую другую кнопку для выхода ")
     comand = input()
-    if comand == "д":
+    if comand == "+":
         a = Task(True, True, True)
         a.add_task()
         tasks.append(a)
